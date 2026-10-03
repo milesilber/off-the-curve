@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why a run like Leicester City's in 2015/16 will never happen again</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../site.css">
+<style>
+/* Styles used only by this article. Shared styles are in ../site.css */
+/* Guess game */
+.guess label{font-family:var(--display);font-weight:600;font-size:20px;display:block}
+.guess-row{display:flex;align-items:center;gap:16px;margin:12px 0 16px}
+.guess input[type=range]{flex:1;accent-color:var(--blue);min-height:44px}
+.guess output{font-family:var(--display);font-weight:800;font-size:40px;min-width:4.2ch;text-align:right;color:var(--blue)}
+.reveal{margin-top:20px}
+.reveal-line{font-size:17px;line-height:1.55;margin:12px 0 0}
+
+/* Callout */
+.callout{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin:36px 0;padding:24px;border-radius:6px;background:var(--gold);color:#1A1400}
+.callout .n{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1}
+.callout .l{font-size:14px;line-height:1.4}
+.callout .mid{font-family:var(--display);font-weight:800;font-size:clamp(28px,5vw,40px);text-align:center;line-height:1}
+.callout .mid small{display:block;font-weight:600;font-size:14px}
+.callout-text{font-size:16px;margin:-20px 0 36px;color:var(--muted)}
+
+/* Sidebar */
+.panel{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:6px;padding:20px}
+.panel h2{font-size:26px;margin:0 0 14px}
+.panel label{font-size:14px;color:var(--muted);display:block;margin-bottom:6px}
+.panel select{width:100%;min-height:44px;font-family:var(--display);font-weight:600;font-size:18px;padding:0 12px;border:1.5px solid var(--blue);border-radius:4px;background:var(--surface);color:var(--ink);cursor:pointer}
+.stat{margin-top:18px}
+.stat .n{font-family:var(--display);font-weight:800;font-size:44px;line-height:1;color:var(--blue)}
+.stat .n.gold{color:var(--gold-ink)}
+.stat .l{font-size:15px;line-height:1.45;color:var(--muted);margin-top:4px}
+.panel a{display:inline-block;margin-top:16px;font-family:var(--display);font-weight:600;font-size:17px}
+
+/* Even-if chain */
+.chain{margin:32px 0;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.gates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:20px}
+.gate{border-radius:4px;padding:12px;text-align:center;background:var(--blue-soft);color:var(--ink);transition:background .35s,color .35s}
+.gate b{display:block;font-family:var(--display);font-weight:800;font-size:22px;line-height:1.1}
+.gate span{font-size:13px}
+.gate.shut{background:var(--blue);color:var(--surface)}
+.chain p{margin:0 0 16px;min-height:6.2em}
+.chain-ctrl{display:flex;gap:8px;flex-wrap:wrap}
+
+@media (max-width:560px){
+  .callout{grid-template-columns:1fr;text-align:center}
+  .gates{grid-template-columns:1fr}
+  .chain p{min-height:0}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-odds" aria-hidden="true">5000–1</div>
+  <div class="hero-inner">
+    <nav class="site-nav" aria-label="Site">
+      <a class="site" href="../">Off the Curve: Seasons that Stand Out</a>
+      <a class="all" href="../">All seasons</a>
+    </nav>
+    <h1>Why a run like Leicester City's will never happen again</h1>
+    <p class="dek">Leicester won the Premier League in 2015/16. Three things made it possible, and none of them exist anymore.</p>
+    <div class="byline">By Miles Silber</div>
+  </div>
+</header>
+
+<div class="wrap">
+<main id="top">
+  <p>If you have ever found yourself in any aspect of the sports world, chances are you are at least somewhat aware of the Cinderella story that is Leicester City FC winning the Premier League in 2015/16. If you read into it just a little more, you’d see most headlines would explain this impossibility through their 5000-1 preseason odds<sup class="cite"><a href="#s1" aria-label="Source 1">1</a></sup> or the fact that they were promoted to the league just prior.<sup class="cite"><a href="#s2" aria-label="Source 2">2</a></sup> And, if you follow almost any all-encompassing sports account on any social media platform, the fact they won the league probably became slightly more mind-boggling if you saw a post about how they were now a mid-table team in the third division of English football.<sup class="cite"><a href="#s3" aria-label="Source 3">3</a></sup> Those numbers are cool, but today I’m going to show you not only how crazy it was for this team to win the most competitive league in the world, but why a story like this will never happen again in English Football.</p>
+  <p>It is worth noting that part of this team’s success can, in fact, be accredited to the mishaps of the powerhouse clubs (Chelsea sacking Jose Mourinho mid-season, Manchester City and Arsenal’s inconsistency, and the struggles of Louis Van Gaal’s Manchester United), but that has a chance of randomly occurring again, the three pillars that made the Leicester team specifically able to win the league do not.</p>
+
+  <!-- PILLAR 1 -->
+  <h2 id="playstyle"><span class="pillar-no">The First Pillar</span>Their Playstyle is Now a Baseline, Not a Loophole</h2>
+  <p>Leicester’s playstyle was based on sacrificing possession to ensure defensive solidarity with their low-block defense, and then capitalize off of mistakes with their high-pressing-high-work-rate forwards in order to score on counter-attacks. Their average possession of 42.4% is the lowest of any Premier league champion ever,<sup class="cite"><a href="#s4" aria-label="Source 4">4</a></sup> and the possession of every champion since them has been between 55-72%, a minimum of thirteen percentage points higher.<sup class="cite"><a href="#s5" aria-label="Source 5">5</a></sup></p>
+
+  <figure>
+    <h3>Leicester won with less of the ball than any champion</h3>
+    <p class="sub">Average possession. Step through to add the comparisons.</p>
+    <div class="steps" role="group" aria-label="Chart steps">
+      <button type="button" data-step="0" aria-pressed="true">Leicester</button>
+      <button type="button" data-step="1" aria-pressed="false">Champions since</button>
+      <button type="button" data-step="2" aria-pressed="false">Other low-possession sides</button>
+    </div>
+    <div class="chart" id="possession"></div>
+    <p class="step-note" id="possession-note" aria-live="polite"></p>
+    <figcaption>Sunderland and Crystal Palace shown at roughly 45%. Sources: <a href="#s4">[4]</a>, <a href="#s5">[5]</a>, <a href="#s7">[7]</a></figcaption>
+  </figure>
+
+  <p>Well, why? This is because teams figured out that you don’t have to sacrifice possession that can lead to attacking possibilities in order to concede less goals. Just look at Arsenal’s championship side last year, they conceded 9 less goals (27 to Leicester’s 36) and still held 56.4% possession.<sup class="cite"><a href="#s6" aria-label="Source 6">6</a></sup></p>
+
+  <figure>
+    <h3>More of the ball, fewer goals conceded</h3>
+    <p class="sub">Goals conceded across the title-winning season.</p>
+    <div class="chart" id="conceded"></div>
+    <figcaption>Source: <a href="#s6">[6]</a></figcaption>
+  </figure>
+
+  <p>This isn’t to say that this playstyle isn’t somewhat effective, Sunderland and Crystal Palace both had possession hovering around 45%, with the former finishing 7th and the latter winning the Europa Conference League, but neither team came close to the top four, much less winning it all.<sup class="cite"><a href="#s7" aria-label="Source 7">7</a></sup></p>
+
+  <!-- PILLAR 2 -->
+  <h2 id="transfers"><span class="pillar-no">The Second Pillar</span>It Takes Rare Players to Win, Players the Market No Longer Prices Cheaply</h2>
+  <p>How much do you think it would cost to gather four players worthy enough to earn a Team of the Year spot? Maybe around 200 million, 50 each seems fair enough right?</p>
+
+  <figure class="guess">
+    <label for="guess-input">Your guess for four Team of the Year players</label>
+    <div class="guess-row">
+      <input type="range" id="guess-input" min="10" max="300" step="5" value="200" aria-describedby="guess-help">
+      <output id="guess-out" for="guess-input">€200M</output>
+    </div>
+    <p class="sub" id="guess-help">Drag to set your guess, then reveal what Leicester actually paid.</p>
+    <button type="button" class="btn primary" id="guess-btn">Reveal what Leicester paid</button>
+    <div class="reveal" id="guess-reveal" hidden>
+      <div class="chart" id="guess-chart"></div>
+      <p class="reveal-line" id="guess-line" aria-live="polite"></p>
+      <p class="sub" style="margin:8px 0 0">Sources: <a href="#s8">[8]</a>, <a href="#s9">[9]</a></p>
+    </div>
+  </figure>
+
+  <p>The cost that it took for Leicester City to buy N’Golo Kanté, Riyad Mahrez, Wes Morgan, and Jamie Vardy was not 200 million, not 100 million, not even 50 million, but 10.68 million Euros.<sup class="cite"><a href="#s8" aria-label="Source 8">8</a></sup><sup class="cite"><a href="#s9" aria-label="Source 9">9</a></sup> Less than 3 million Euros each for 4 of the 11 most impactful players in the entire league, and it gets even crazier. The July before their historic season, the average transfer market value of these four was 4.4 million.<sup class="cite"><a href="#s10" aria-label="Source 10">10</a></sup> The average transfer value of the PFA Team of the Year selections on championship sides since that season, using the same transfer market value of the July before the season started, has averaged between 44.5 million and 98.2 million per player. That average is 66 million per player, FIFTEEN times more than Leicester’s.<sup class="cite"><a href="#s11" aria-label="Source 11">11</a></sup></p>
+
+  <figure>
+    <h3>Fifteen times the price per player</h3>
+    <p class="sub">Average transfer market value per Team of the Year player, the July before the title season, € millions.</p>
+    <div class="chart" id="value"></div>
+    <figcaption>The bracket shows the range across title-winning seasons since 2015/16. Sources: <a href="#s10">[10]</a>, <a href="#s11">[11]</a></figcaption>
+  </figure>
+
+  <p>It’s not like those four suddenly became amazing in a year, the fact is that the modern-day market would NEVER value that sort of talent even remotely close to that low ever again. As a result of the adjustment of the market, it is no longer possible for a small team like Leicester to get their hands on that much talent at one time because they will always be outbid by the bigger club.</p>
+
+  <div class="callout" role="group" aria-label="Riyad Mahrez transfer">
+    <div><div class="n">£400K</div><div class="l">Leicester buy Mahrez, 2014</div></div>
+    <div class="mid">144x<small>inflation-adjusted</small></div>
+    <div style="text-align:right"><div class="n">£61.02M</div><div class="l">Leicester sell Mahrez, 2018</div></div>
+  </div>
+  <p class="callout-text">Interesting stat: Riyad Mahrez was bought by Leicester for 400,000 GBP in 2014, and sold for 61.02 million GBP in 2018, a 144x return adjusted for inflation.<sup class="cite"><a href="#s12" aria-label="Source 12">12</a></sup></p>
+
+  <!-- PILLAR 3 -->
+  <h2 id="money"><span class="pillar-no">The Third Pillar</span>The Financial Door Has Closed</h2>
+  <div class="subhead">By the Numbers</div>
+  <p>The average squad value gap between the top 6 Premier League clubs and the rest of the league in 2015/16 was 179 Million Euros, ever since then it has not been below 353 million in any season, peaking at 703 million in 2018/19.<sup class="cite"><a href="#s13" aria-label="Source 13">13</a></sup> The gap essentially doubled right after Leicester won the league, and has never been close to that number again. The financial conditions that made Leicester’s title run possible no longer exist.</p>
+
+  <figure>
+    <h3>The gap between the top six and everyone else</h3>
+    <p class="sub">Average squad value gap, top 6 vs the rest of the league, € millions. Hover or tap a bar.</p>
+    <div class="chart" id="gap"></div>
+    <figcaption>Source: <a href="#s13">[13]</a></figcaption>
+  </figure>
+
+  <p>If we compared the average value of every Premier League champion to the average value of every club that hasn’t won the league between 2015/16 and 2025/26 (Manchester City, Liverpool, Chelsea, and Arsenal), Leicester’s title was 26.4 million BELOW that average, while every other champion since has been above that average by between 452 million and 986 million Euros.<sup class="cite"><a href="#s14" aria-label="Source 14">14</a></sup> In terms of market value, Leicester was a below-average Premier League squad, the fact that no champion has been within half a billion of euros of an average squad since then shows that you’ve got to spend big money on high value players to even have a chance at winning the league.</p>
+
+  <figure>
+    <h3>The only champion below average</h3>
+    <p class="sub">Champion's squad value compared with the average non-champion, € millions.</p>
+    <div class="chart" id="diverge"></div>
+    <figcaption>Source: <a href="#s14">[14]</a></figcaption>
+  </figure>
+
+  <p>In 7 of the 10 seasons since the historic season, the champion was also the highest-valued squad in the league. Leicester is the only champion who wasn’t even close to the league’s richest club, and by a wider margin (3.58x less than Manchester City’s 576.5 million) than any other champion-to-richest-club gap.<sup class="cite"><a href="#s15" aria-label="Source 15">15</a></sup></p>
+
+  <figure>
+    <h3>Champions are usually the richest club. Leicester wasn't close.</h3>
+    <p class="sub">Squad value in 2015/16, € millions, and how often the champion has been the league's most valuable squad since.</p>
+    <div class="chart" id="richest"></div>
+    <figcaption>Source: <a href="#s15">[15]</a></figcaption>
+  </figure>
+
+  <p>The wage bill of that Leicester side was 38.45m GBP, the 16th highest of the 20 Premier League sides that year.<sup class="cite"><a href="#s16" aria-label="Source 16">16</a></sup> Of the 30 relegated teams since that season, NINE of them still spent more than the season-specific equivalent to that wage bill, including Leicester City itself when they were relegated in the 2022/23 season and the 2024/25 season.<sup class="cite"><a href="#s17" aria-label="Source 17">17</a></sup> Furthermore, the best finish for a 16th-ranked-wage club since Leicester is 6th (Bournemouth in 25/26), with two other sides reaching 7th (Wolves in 19/20 and Nottingham Forest in 24/25). The rest of the clubs ranged from mid-table to relegation, with not a single one of them finishing in the top four.<sup class="cite"><a href="#s18" aria-label="Source 18">18</a></sup> It’s no longer possible with a small club that can only afford certain wages to even break into the top four, which means they won’t be winning a Premier League any time soon.</p>
+
+  <figure>
+    <h3>A title-winning wage bill now gets you relegated</h3>
+    <p class="sub">The 30 clubs relegated since 2015/16. Highlighted: the 9 who spent more on wages than Leicester's title side (season-adjusted).</p>
+    <div class="chart" id="relegated"></div>
+    <h3 style="margin-top:28px">Where the 16th-highest wage bill finishes now</h3>
+    <p class="sub">League position. The top four is shaded.</p>
+    <div class="chart" id="finish"></div>
+    <figcaption>Sources: <a href="#s16">[16]</a>, <a href="#s17">[17]</a>, <a href="#s18">[18]</a></figcaption>
+  </figure>
+
+  <p>The fact is, if you’re not either a big club that has historically always had money, or received a sustained increase in transfer and wage spending due to an ownership takeover like Newcastle and Aston Villa, you can’t even break into the top four. Sure, Leicester had an ownership change six years before their title, but their wages and spending remained low in the years leading up to their historic season, and the takeover itself was primarily reported as debt relief left by the previous ownership.<sup class="cite"><a href="#s19" aria-label="Source 19">19</a></sup><sup class="cite"><a href="#s20" aria-label="Source 20">20</a></sup> Now more than ever, it is evidently clear that cash is king in the Premier League.</p>
+
+  <blockquote>Now more than ever, it is evidently clear that cash is king in the Premier League.</blockquote>
+
+  <!-- TOGETHER -->
+  <h2 id="together">Putting it All Together</h2>
+  <p>These pillars are not only strong independent factors as to why a season like this will never be repeated on their own, but their interaction with each other makes this reasoning even stronger.</p>
+
+  <div class="chain" id="chain">
+    <div class="gates" aria-hidden="true">
+      <div class="gate" data-gate="0"><b>The system</b><span id="g0s">Open</span></div>
+      <div class="gate" data-gate="1"><b>The talent</b><span id="g1s">Open</span></div>
+      <div class="gate" data-gate="2"><b>The money</b><span id="g2s">Open</span></div>
+    </div>
+    <p id="chain-text" aria-live="polite">Imagine a smaller club trying to do it again. Step through what stands in the way.</p>
+    <div class="chain-ctrl">
+      <button type="button" class="btn primary" id="chain-next">Even if…</button>
+      <button type="button" class="btn" id="chain-reset" hidden>Start over</button>
+    </div>
+  </div>
+
+  <p class="closer">If there were a market for it, I would bet my life savings on the fact that there will never be another Premier League season like Leicester City’s.</p>
+  <section class="sources" aria-labelledby="sources-h">
+    <h2 id="sources-h">Sources</h2>
+    <ol><li id="s1">William Hill (preseason title odds); Sky Sports, “Premier League title odds tracker, 2015/16.” skysports.com.</li><li id="s2">“History of Leicester City F.C.” Wikipedia, <a href="https://en.wikipedia.org/wiki/History_of_Leicester_City_F.C.">en.wikipedia.org/wiki/History_of_Leicester_City_F.C.</a></li><li id="s3">ESPN, “Leicester relegated to League One 10 years after Premier League title.” espn.com; Sky Sports, “Leicester City: From Premier League glory to relegation to League One.” skysports.com; Goal.com, “‘The lowest point in the club’s history’: Ten years after their sensational title win, Leicester City are relegated to the third tier.” goal.com.</li><li id="s4">Premier League / Opta possession data, as reported by theanalyst.com and premierleague.com.</li><li id="s5">statmuse.com, team-season possession data by Premier League champion, 2016/17–2025/26.</li><li id="s6">Official Premier League season records, 2015/16 and 2025/26 (goals conceded).</li><li id="s7">statmuse.com, team possession data, 2025/26 season; official Premier League and UEFA competition results, 2025/26.</li><li id="s8">Sports Illustrated, contemporaneous coverage of the 2016 PFA Team of the Year announcement. si.com.</li><li id="s9">Multiple outlets reporting individual transfer fees for N’Golo Kanté, Riyad Mahrez, Wes Morgan, and Jamie Vardy (acquisition and, for Kanté, subsequent sale to Chelsea).</li><li id="s10">Market valuations for Kanté, Mahrez, Morgan, and Vardy, July 2015 (pre-season), as compiled by the authors from Transfermarkt player valuation data.</li><li id="s11">Author-compiled dataset: pre-season (July) market valuations of PFA Team of the Year selections on each Premier League champion, 2016/17–2025/26, cross-referenced against confirmed PFA Team of the Year rosters for each season.</li><li id="s12">Multiple outlets reporting Mahrez’s 2014 and 2018 transfer fees; UK Consumer Prices Index data, Office for National Statistics (ons.gov.uk), used to adjust both figures for inflation.</li><li id="s13">Transfermarkt.com, Premier League squad market value archives by season, 2015/16–2025/26 (author-collected).</li><li id="s14">Computed from the Transfermarkt dataset cited in [13]; champion and non-champion (excluding Manchester City, Liverpool, Chelsea, and Arsenal) squad values by season.</li><li id="s15">Computed from the Transfermarkt dataset cited in [13]; champion squad value vs. the single highest squad value in the league, by season.</li><li id="s16">Capology.com, Premier League payroll archive, 2015/16 season (author-collected).</li><li id="s17">Capology.com, Premier League payroll archives, 2016/17–2025/26 (author-collected); figures adjusted using season-specific, football-wage-specific inflation derived from each season’s league-wide total wage bill (also sourced from Capology.com).</li><li id="s18">Capology.com payroll archives, as in [17]; official final Premier League league tables, 2016/17–2025/26.</li><li id="s19">Multiple outlets reporting the King Power/Srivaddhanaprabha family takeover of Leicester City, August 2010, including its characterization as debt relief.</li><li id="s20">Multiple outlets reporting the Public Investment Fund takeover of Newcastle United (completed October 2021) and the NSWE/Sawiris-Edens takeover of Aston Villa (July 2018).</li></ol>
+  </section>
+</main>
+
+<aside aria-label="Why it was an anomaly">
+  <div class="panel">
+    <h2>Why it was an anomaly</h2>
+    <label for="angle">Choose an angle</label>
+    <select id="angle">
+      <option value="playstyle">Playstyle</option>
+      <option value="transfers">Transfer value</option>
+      <option value="money">Squad value</option>
+      <option value="wages">Wages</option>
+    </select>
+    <div id="angle-body" aria-live="polite"></div>
+  </div>
+</aside>
+</div>
+
+<nav class="article-nav" id="article-nav" data-slug="leicester-2015-16" aria-label="More seasons" hidden></nav>
+
+<footer>
+  Off the Curve: Seasons that Stand Out. Written by Miles Silber.
+</footer>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+function s(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs){if(k==='text')e.textContent=attrs[k];else e.setAttribute(k,attrs[k]);}if(parent)parent.appendChild(e);return e;}
+function svg(id,w,h,label){const host=document.getElementById(id);const e=s('svg',{viewBox:`0 0 ${w} ${h}`,role:'img','aria-label':label});host.appendChild(e);return e;}
+const V=n=>`var(--${n})`;
+
+/* Reading progress */
+const bar=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);bar.style.width=(Math.max(0,Math.min(1,p))*100)+'%';},{passive:true});
+
+/* 1. Possession */
+(function(){
+  const g=svg('possession',680,210,'Possession: Leicester 42.4%, champions since 55 to 72%, Arsenal 2025/26 56.4%, Sunderland and Crystal Palace around 45%');
+  const x=v=>30+(v-35)/(75-35)*620, y=150;
+  const band=s('g',{class:'fade',opacity:0},g);
+  s('rect',{x:x(55),y:40,width:x(72)-x(55),height:y-40,fill:V('gold'),opacity:.35,rx:3},band);
+  s('text',{x:(x(55)+x(72))/2,y:30,'text-anchor':'middle','font-size':17,text:'Every champion since: 55–72%'},band);
+  const ars=s('g',{class:'fade',opacity:0},g);
+  s('circle',{cx:x(56.4),cy:y,r:8,fill:V('grey-dark')},ars);
+  s('text',{x:x(56.4)+12,y:y-14,'font-size':15,text:'Arsenal 2025/26: 56.4%'},ars);
+  s('line',{x1:30,x2:650,y1:y,y2:y,stroke:V('line'),'stroke-width':2},g);
+  for(let t=35;t<=75;t+=5){s('line',{x1:x(t),x2:x(t),y1:y,y2:y+6,stroke:V('grey'),'stroke-width':1.5},g);s('text',{x:x(t),y:y+26,'text-anchor':'middle','font-size':15,class:'muted',text:t+'%'},g);}
+  const low=s('g',{class:'fade',opacity:0},g);
+  s('circle',{cx:x(45),cy:y,r:7,fill:'none',stroke:V('grey-dark'),'stroke-width':2.5},low);
+  s('circle',{cx:x(45),cy:y-20,r:7,fill:'none',stroke:V('grey-dark'),'stroke-width':2.5},low);
+  s('text',{x:x(45),y:y-38,'text-anchor':'middle','font-size':15,text:'Sunderland & Palace ≈45%'},low);
+  const lei=s('g',{},g);
+  s('circle',{cx:x(42.4),cy:y,r:11,fill:V('blue')},lei);
+  s('text',{x:x(42.4),y:y-22,'text-anchor':'middle','font-size':17,fill:V('blue'),text:'Leicester 42.4%'},lei);
+  const notes=['Leicester averaged 42.4% possession, the lowest of any Premier League champion ever.','Every champion since has held between 55% and 72% of the ball, at least thirteen points more.','Teams can still play this way, but around 45% possession has meant 7th place, not a title.'];
+  const note=document.getElementById('possession-note');const btns=[...document.querySelectorAll('[data-step]')];
+  function set(st){band.setAttribute('opacity',st>=1?1:0);ars.setAttribute('opacity',st>=1?1:0);low.setAttribute('opacity',st>=2?1:0);
+    lei.querySelector('text').setAttribute('opacity',st===2?0:1);
+    btns.forEach(b=>b.setAttribute('aria-pressed',String(+b.dataset.step===st)));note.textContent=notes[st];}
+  btns.forEach(b=>b.addEventListener('click',()=>set(+b.dataset.step)));set(0);
+})();
+
+/* 2. Goals conceded */
+(function(){
+  const g=svg('conceded',680,130,'Goals conceded: Leicester 36 at 42.4% possession, Arsenal 27 at 56.4% possession');
+  const rows=[['Leicester 2015/16','42.4% possession',36,'blue'],['Arsenal 2025/26','56.4% possession',27,'grey-dark']];
+  const x0=190,sc=320/40;
+  rows.forEach((r,i)=>{const y=14+i*58;
+    s('text',{x:0,y:y+18,'font-size':18,text:r[0]},g);s('text',{x:0,y:y+38,'font-size':14,class:'muted',text:r[1]},g);
+    s('rect',{x:x0,y:y+4,width:r[2]*sc,height:30,fill:V(r[3]),rx:3},g);
+    s('text',{x:x0+r[2]*sc+10,y:y+27,'font-size':22,text:r[2]+' conceded'},g);});
+})();
+
+/* 3. Guess game */
+(function(){
+  const inp=document.getElementById('guess-input'),out=document.getElementById('guess-out'),btn=document.getElementById('guess-btn'),rev=document.getElementById('guess-reveal'),line=document.getElementById('guess-line');
+  const ACTUAL=10.68;let shown=false;
+  const g=svg('guess-chart',680,130,'Your guess compared with the €10.68M Leicester paid');
+  const x0=170,W=420;
+  const r1=s('rect',{x:x0,y:10,height:32,fill:V('grey'),rx:3},g),t1=s('text',{y:33,'font-size':20},g);
+  s('text',{x:0,y:33,'font-size':18,text:'Your guess'},g);
+  const r2=s('rect',{x:x0,y:70,height:32,fill:V('blue'),rx:3},g),t2=s('text',{y:93,'font-size':20,fill:V('blue')},g);
+  s('text',{x:0,y:93,'font-size':18,text:'Leicester paid'},g);
+  r1.style.transition=r2.style.transition='width .6s ease';
+  function draw(){const v=+inp.value;out.textContent='€'+v+'M';
+    if(!shown)return;const m=Math.max(v,ACTUAL);
+    r1.setAttribute('width',v/m*W);t1.setAttribute('x',x0+v/m*W+10);t1.textContent='€'+v+'M';
+    r2.setAttribute('width',Math.max(4,ACTUAL/m*W));t2.setAttribute('x',x0+Math.max(4,ACTUAL/m*W)+10);t2.textContent='€10.68M';
+    const ratio=v/ACTUAL;line.textContent=ratio>=1.5?`Your guess was ${ratio.toFixed(ratio<10?1:0)}x what Leicester actually paid for Kanté, Mahrez, Morgan and Vardy.`:'Close. Leicester paid €10.68M for Kanté, Mahrez, Morgan and Vardy combined.';}
+  inp.addEventListener('input',draw);
+  btn.addEventListener('click',()=>{shown=true;rev.hidden=false;btn.textContent='Revealed: €10.68M for all four';btn.disabled=true;r1.setAttribute('width',0);r2.setAttribute('width',0);requestAnimationFrame(()=>requestAnimationFrame(draw));});
+  draw();
+})();
+
+/* 4. Value per player */
+(function(){
+  const g=svg('value',680,170,'Average value per Team of the Year player: Leicester 4.4 million, title winners since 66 million on average, range 44.5 to 98.2 million');
+  const x0=210,x=v=>x0+v*4.3;
+  for(const t of [0,25,50,75,100]){s('line',{x1:x(t),x2:x(t),y1:0,y2:140,stroke:V('line')},g);s('text',{x:x(t),y:162,'text-anchor':'middle','font-size':14,class:'muted',text:'€'+t+'M'},g);}
+  s('text',{x:0,y:32,'font-size':18,text:"Leicester's four"},g);s('text',{x:0,y:52,'font-size':14,class:'muted',text:'July 2015'},g);
+  s('rect',{x:x0,y:16,width:4.4*4.3,height:34,fill:V('blue'),rx:3},g);
+  s('text',{x:x(4.4)+10,y:41,'font-size':22,fill:V('blue'),text:'€4.4M'},g);
+  s('text',{x:0,y:100,'font-size':18,text:'Champions since'},g);s('text',{x:0,y:120,'font-size':14,class:'muted',text:'2016/17 – 2025/26'},g);
+  s('rect',{x:x0,y:84,width:66*4.3,height:34,fill:V('grey'),rx:3},g);
+  s('path',{d:`M${x(44.5)} 101 H${x(98.2)} M${x(44.5)} 91 V111 M${x(98.2)} 91 V111`,stroke:V('ink'),'stroke-width':2,fill:'none'},g);
+  s('text',{x:x(66),y:78,'text-anchor':'middle','font-size':22,text:'€66M avg'},g);
+  s('text',{x:x(98.2)+10,y:107,'font-size':14,class:'muted',text:'up to €98.2M'},g);
+})();
+
+/* 5. Squad value gap */
+(function(){
+  const g=svg('gap',680,300,'Squad value gap: 179 million in 2015/16, never below 353 million since, peak 703 million in 2018/19');
+  const bars=[['2015/16','Leicester\'s season',179,'blue'],['Every season since','at least',353,'grey'],['2018/19','the peak',703,'grey-dark']];
+  const base=250,sc=210/703,bw=140;
+  s('line',{x1:40,x2:640,y1:base,y2:base,stroke:V('line'),'stroke-width':2},g);
+  bars.forEach((b,i)=>{const cx=120+i*220,h=b[2]*sc;
+    const grp=s('g',{tabindex:0,role:'img','aria-label':`${b[0]}: €${b[2]} million`},g);grp.style.cursor='default';
+    const r=s('rect',{x:cx-bw/2,y:base-h,width:bw,height:h,fill:V(b[3]),rx:3},grp);
+    s('text',{x:cx,y:base-h-12,'text-anchor':'middle','font-size':26,fill:b[3]==='blue'?V('blue'):V('ink'),text:(i===1?'≥':'')+'€'+b[2]+'M'},grp);
+    s('text',{x:cx,y:base+24,'text-anchor':'middle','font-size':17,text:b[0]},g);
+    s('text',{x:cx,y:base+44,'text-anchor':'middle','font-size':14,class:'muted',text:b[1]},g);
+    const on=()=>r.setAttribute('opacity',.8),off=()=>r.setAttribute('opacity',1);
+    grp.addEventListener('mouseenter',on);grp.addEventListener('mouseleave',off);grp.addEventListener('focus',on);grp.addEventListener('blur',off);});
+  s('path',{d:`M${120+bw/2+8} ${base-179*sc} C 250 ${base-179*sc-60}, 290 ${base-353*sc-40}, ${340-bw/2-8} ${base-353*sc}`,stroke:V('gold'),'stroke-width':3,fill:'none','stroke-dasharray':'6 5'},g);
+  s('text',{x:230,y:base-353*sc-40,'text-anchor':'middle','font-size':17,fill:V('gold-ink'),text:'roughly doubled'},g);
+})();
+
+/* 6. Champion vs average */
+(function(){
+  const g=svg('diverge',680,170,'Champion value versus average non-champion: Leicester 26.4 million below; every champion since 452 to 986 million above');
+  const z=215,sc=0.42,x=v=>z+v*sc;
+  s('line',{x1:z,x2:z,y1:4,y2:140,stroke:V('ink'),'stroke-width':2},g);
+  s('text',{x:z,y:162,'text-anchor':'middle','font-size':14,class:'muted',text:'average'},g);
+  for(const t of [250,500,750,1000]){s('line',{x1:x(t),x2:x(t),y1:4,y2:140,stroke:V('line')},g);s('text',{x:x(t),y:162,'text-anchor':'middle','font-size':14,class:'muted',text:'+€'+t+'M'},g);}
+  s('text',{x:0,y:40,'font-size':18,text:'Leicester 2015/16'},g);
+  s('rect',{x:x(-26.4),y:20,width:26.4*sc,height:30,fill:V('blue'),rx:2},g);
+  s('text',{x:z+10,y:42,'font-size':20,fill:V('blue'),text:'−€26.4M below average'},g);
+  s('text',{x:0,y:104,'font-size':18,text:'Every champion since'},g);
+  s('line',{x1:z,x2:x(452),y1:100,y2:100,stroke:V('grey'),'stroke-width':2,'stroke-dasharray':'3 4'},g);
+  s('rect',{x:x(452),y:84,width:(986-452)*sc,height:30,fill:V('grey'),rx:3},g);
+  s('text',{x:x(452),y:76,'font-size':16,text:'+€452M'},g);
+  s('text',{x:x(986),y:76,'text-anchor':'end','font-size':16,text:'+€986M'},g);
+})();
+
+/* 7. Richest club */
+(function(){
+  const g=svg('richest',680,220,'Manchester City squad value 576.5 million, 3.58 times Leicester; in 7 of 10 seasons since, the champion was the most valuable squad');
+  const x0=180,sc=440/576.5,lei=576.5/3.58;
+  s('text',{x:0,y:30,'font-size':18,text:'Manchester City'},g);
+  s('rect',{x:x0,y:10,width:576.5*sc,height:30,fill:V('grey'),rx:3},g);
+  s('text',{x:x0+576.5*sc-10,y:32,'text-anchor':'end','font-size':20,fill:V('ink'),text:'€576.5M'},g);
+  s('text',{x:0,y:78,'font-size':18,text:'Leicester'},g);
+  s('rect',{x:x0,y:58,width:lei*sc,height:30,fill:V('blue'),rx:3},g);
+  s('text',{x:x0+lei*sc+10,y:80,'font-size':20,fill:V('blue'),text:'3.58x smaller'},g);
+  s('text',{x:0,y:142,'font-size':18,text:'Richest squad'},g);
+  s('text',{x:0,y:162,'font-size':18,text:'won, since 2016/17'},g);
+  for(let i=0;i<10;i++){const cx=x0+14+i*42;s('circle',{cx,cy:150,r:14,fill:i<7?V('grey-dark'):'none',stroke:V('grey-dark'),'stroke-width':2.5},g);}
+  s('text',{x:x0,y:200,'font-size':20,text:'7 of 10'},g);
+})();
+
+/* 8. Relegated clubs */
+(function(){
+  const g=svg('relegated',680,150,'30 relegated clubs since 2015/16, 9 of which spent more on wages than Leicester\'s title side');
+  for(let i=0;i<30;i++){const c=i%10,r=Math.floor(i/10);const hi=i<9;
+    s('circle',{cx:22+c*44,cy:22+r*44,r:16,fill:hi?V('gold'):V('line')},g);}
+  s('text',{x:470,y:52,'font-size':44,fill:V('gold-ink'),text:'9 of 30'},g);
+  s('text',{x:470,y:80,'font-size':16,text:'relegated clubs outspent'},g);
+  s('text',{x:470,y:100,'font-size':16,text:"Leicester's title wage bill"},g);
+  s('text',{x:470,y:120,'font-size':16,class:'muted',text:'(£38.45M, 16th of 20)'},g);
+})();
+
+/* 9. Finish strip */
+(function(){
+  const g=svg('finish',680,170,'League finishes: Leicester 1st in 2015/16 with the 16th-highest wage bill; best since by such a club is 6th, Bournemouth 2025/26, then 7th, Wolves 2019/20 and Nottingham Forest 2024/25');
+  const cw=32,x0=20,x=p=>x0+(p-1)*cw;
+  s('rect',{x:x0,y:60,width:cw*4,height:34,fill:V('gold'),opacity:.35,rx:3},g);
+  for(let p=1;p<=20;p++){s('rect',{x:x(p)+1,y:60,width:cw-2,height:34,fill:'none',stroke:V('line'),rx:2},g);
+    s('text',{x:x(p)+cw/2,y:83,'text-anchor':'middle','font-size':15,class:'muted',text:p},g);}
+  s('text',{x:x0,y:118,'font-size':14,class:'muted',text:'Top four'},g);
+  s('circle',{cx:x(1)+cw/2,cy:40,r:10,fill:V('blue')},g);
+  s('text',{x:x(1)+cw/2,y:22,'font-size':16,fill:V('blue'),text:'Leicester 2015/16'},g);
+    s('circle',{cx:x(6)+cw/2,cy:112,r:8,fill:V('grey-dark')},g);
+  s('circle',{cx:x(7)+cw/2-6,cy:112,r:8,fill:V('grey-dark')},g);
+  s('circle',{cx:x(7)+cw/2+8,cy:112,r:8,fill:V('grey-dark')},g);
+  s('path',{d:`M${x(7)+cw} 112 H${x(9)}`,stroke:V('grey'),'stroke-width':1.5},g);
+  s('text',{x:x(9)+6,y:108,'font-size':15,text:'Best since: 6th (Bournemouth 25/26)'},g);
+  s('text',{x:x(9)+6,y:128,'font-size':15,text:'7th (Wolves 19/20, Forest 24/25)'},g);
+  s('text',{x:x(9)+6,y:154,'font-size':14,class:'muted',text:'None reached the top four.'},g);
+})();
+
+/* 10. Even-if chain */
+(function(){
+  const steps=[
+    ['The system','Even if a smaller club was able to build the system as tactically sound as Leicester’s, the league’s best teams can now execute that same defensive/pressing while also controlling possession, so the system alone does not give a team a title-winning edge.'],
+    ['The talent','Even if the smaller club’s system was good enough to compete, it takes individually rare talent along with that system to have a chance at the title, and the market now prices that talent at a level these smaller teams can no longer access.'],
+    ['The money','Even if this smaller club built the system and found the individual, the financial gap to the clubs it needs to beat has stepped up permanently, and the market now moves fast enough to buy away breakout players before a multi-year title push can form around it.']];
+  const txt=document.getElementById('chain-text'),next=document.getElementById('chain-next'),reset=document.getElementById('chain-reset');
+  const gates=[...document.querySelectorAll('.gate')];let i=0;
+  const intro=txt.textContent;
+  next.addEventListener('click',()=>{if(i>=3)return;gates[i].classList.add('shut');document.getElementById('g'+i+'s').textContent='Closed';txt.textContent=steps[i][1];i++;
+    if(i>=3){next.disabled=true;next.textContent='All three closed';reset.hidden=false;}else next.textContent='Even if… ('+(i+1)+' of 3)';});
+  reset.addEventListener('click',()=>{i=0;gates.forEach((gt,k)=>{gt.classList.remove('shut');document.getElementById('g'+k+'s').textContent='Open';});txt.textContent=intro;next.disabled=false;next.textContent='Even if…';reset.hidden=true;next.focus();});
+})();
+
+/* 11. Sidebar angles */
+(function(){
+  const A={
+    playstyle:{href:'#playstyle',stats:[['42.4%','Leicester\'s possession, the lowest of any champion ever',''],['55–72%','possession range of every champion since','gold']]},
+    transfers:{href:'#transfers',stats:[['€10.68M','total cost of Kanté, Mahrez, Morgan and Vardy',''],['15x','how much more title winners\' Team of the Year players have been valued since','gold']]},
+    money:{href:'#money',stats:[['€179M','top-6 squad value gap in 2015/16',''],['≥€353M','the gap in every season since','gold'],['7 of 10','seasons since won by the richest squad','']]},
+    wages:{href:'#money',stats:[['16th','Leicester\'s wage bill rank in their title season',''],['9 of 30','relegated clubs since that spent more','gold']]}
+  };
+  const sel=document.getElementById('angle'),body=document.getElementById('angle-body');
+  function show(){const a=A[sel.value];body.innerHTML=a.stats.map(([n,l,c])=>`<div class="stat"><div class="n ${c}">${n}</div><div class="l">${l}</div></div>`).join('')+`<a href="${a.href}">Read this part</a>`;}
+  let touched=false;
+  sel.addEventListener('change',()=>{touched=true;show();});show();
+  const map={playstyle:'playstyle',transfers:'transfers',money:'money'};
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(touched)return;es.forEach(e=>{if(e.isIntersecting&&map[e.target.id]&&sel.value!==map[e.target.id]){sel.value=map[e.target.id];show();}});},{rootMargin:'0px 0px -60% 0px'});
+    ['playstyle','transfers','money'].forEach(id=>io.observe(document.getElementById(id)));}
+})();
+})();
+</script>
+<script src="../articles.js"></script>
+</body>
+</html>
