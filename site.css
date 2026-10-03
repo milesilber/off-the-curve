@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Off the Curve: shared styles
+   Every page links to this file. Change a color or font here and it changes
+   on every page. Styles used by only one article's charts/widgets live in
+   that article's own <style> block instead.
+   ========================================================================== */
+
+/* ---- Colors and fonts (light mode, then dark mode) ---- */
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --ink:#0E1726; --muted:#4A5568; --line:#D5DBE5;
+  --blue:#0B3D91; --blue-soft:#DCE6F7; --gold:#F2B807; --gold-ink:#7A5B00; --grey:#8C95A6; --grey-dark:#5B6577;
+  --hero:#0B3D91; --hero-ink:#FFFFFF;
+  --display:'Big Shoulders Display','Arial Narrow','Helvetica Neue',Arial,sans-serif;
+  --serif:'Literata',Georgia,'Times New Roman',serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1220; --surface:#121B2E; --ink:#E8ECF4; --muted:#A3AEC2; --line:#26334D;
+    --blue:#7AA2F2; --blue-soft:#1C2B4D; --gold:#F5C431; --gold-ink:#F5C431; --grey:#6B768A; --grey-dark:#9AA4B6;
+    --hero:#0A2A66; --hero-ink:#FFFFFF;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1220; --surface:#121B2E; --ink:#E8ECF4; --muted:#A3AEC2; --line:#26334D;
+  --blue:#7AA2F2; --blue-soft:#1C2B4D; --gold:#F5C431; --gold-ink:#F5C431; --grey:#6B768A; --grey-dark:#9AA4B6;
+  --hero:#0A2A66; --hero-ink:#FFFFFF;
+}
+
+/* ---- Base ---- */
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 24px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+.progress{position:fixed;top:0;left:0;height:4px;width:0;background:var(--gold);z-index:10;padding-top:0}
+
+/* ---- Site navigation (top of every article) ---- */
+.site-nav{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.site-nav a{color:inherit;text-decoration:none}
+.site-nav a:hover{text-decoration:underline}
+.site-nav .all{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:.02em;opacity:.85}
+
+/* ---- Hero ---- */
+.hero{background:var(--hero);color:var(--hero-ink);position:relative;overflow:hidden;padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)}
+.hero-odds{position:absolute;right:-2vw;bottom:-6vw;font-family:var(--display);font-weight:800;font-size:clamp(160px,34vw,460px);line-height:.8;color:transparent;-webkit-text-stroke:2px rgba(242,184,7,.55);pointer-events:none;user-select:none;letter-spacing:-.01em;white-space:nowrap}
+.hero-inner{position:relative;max-width:1100px;margin:0 auto}
+.site{font-family:var(--display);font-weight:600;font-size:20px;letter-spacing:.02em;opacity:.85}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(48px,8.5vw,112px);line-height:.92;margin:28px 0 24px;max-width:13ch;letter-spacing:-.005em}
+.hero .dek{font-size:clamp(18px,2.2vw,22px);max-width:36ch;margin:0 0 28px;opacity:.92}
+.byline{font-size:16px;opacity:.8}
+
+/* ---- Article layout: text column + sidebar ---- */
+.wrap{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,64px);display:grid;grid-template-columns:minmax(0,680px) 300px;gap:64px;align-items:start}
+main{padding:56px 0 40px;min-width:0}
+aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 32px);margin-top:56px}
+@media (max-width:1040px){
+  .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+  aside{position:static;margin:0 0 8px;order:-1;margin-top:40px}
+}
+main p{margin:0 0 1.2em}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.6vw,48px);line-height:1;margin:72px 0 20px;letter-spacing:-.005em}
+h2 .pillar-no{display:block;font-weight:600;font-size:.5em;color:var(--blue);margin-bottom:10px;letter-spacing:.01em}
+.subhead{font-family:var(--display);font-weight:600;font-size:24px;margin:32px 0 12px;color:var(--blue)}
+
+/* ---- Figures and charts ---- */
+figure{margin:36px 0 40px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px}
+figure h3{font-family:var(--display);font-weight:600;font-size:24px;line-height:1.15;margin:0 0 6px}
+figure .sub{font-size:15px;color:var(--muted);margin:0 0 16px;line-height:1.5}
+figcaption{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.5}
+figcaption a{color:var(--blue)}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--display);font-weight:600;fill:var(--ink)}
+.chart .muted{fill:var(--muted)}
+.steps{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.steps button,.btn{font-family:var(--display);font-weight:600;font-size:17px;min-height:44px;padding:8px 16px;border-radius:999px;border:1.5px solid var(--blue);background:transparent;color:var(--blue);cursor:pointer}
+.steps button[aria-pressed="true"],.btn.primary{background:var(--blue);color:var(--surface)}
+.steps button:hover,.btn:hover{filter:brightness(1.1)}
+.step-note{font-size:16px;line-height:1.55;margin:14px 0 0;min-height:3.1em}
+.fade{transition:opacity .45s ease}
+@media (max-width:560px){
+  figure{padding:16px;margin-left:-4px;margin-right:-4px}
+}
+
+/* ---- Pull quote and closing line ---- */
+blockquote{margin:40px 0;padding:0;font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,50px);line-height:1.02;color:var(--blue)}
+.closer{font-family:var(--display);font-weight:800;font-size:clamp(30px,4.4vw,44px);line-height:1.05;margin:48px 0 0}
+
+/* ---- Citations and Sources ---- */
+.cite a{font-family:var(--display);font-weight:600;font-size:.72em;text-decoration:none;padding:0 1px;color:var(--blue)}
+.cite a:hover{text-decoration:underline}
+.sources{margin-top:64px;border-top:2px solid var(--ink)}
+.sources h2{font-size:32px;margin:24px 0 16px}
+.sources ol{margin:0;padding-left:1.6em;font-size:15px;line-height:1.55;color:var(--muted)}
+.sources li{margin-bottom:10px;padding-left:4px}
+.sources li:target{background:var(--blue-soft);color:var(--ink)}
+
+/* ---- Previous / next article links (filled in by articles.js) ---- */
+.article-nav{max-width:1100px;margin:48px auto 0;padding:0 clamp(20px,5vw,64px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.article-nav[hidden]{display:none}
+.article-nav a{display:block;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink)}
+.article-nav a:hover{border-color:var(--blue)}
+.article-nav .dir{display:block;font-size:14px;color:var(--muted)}
+.article-nav .t{display:block;font-family:var(--display);font-weight:800;font-size:26px;line-height:1.1;color:var(--blue)}
+.article-nav .next{grid-column:2;text-align:right}
+@media (max-width:560px){
+  .article-nav{grid-template-columns:1fr}
+  .article-nav .next{grid-column:1}
+}
+
+/* ---- Homepage cards ---- */
+.home{padding:56px clamp(20px,5vw,64px) 0}
+.cards{list-style:none;max-width:1100px;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;height:100%;min-height:180px;padding:20px;background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--blue);border-radius:6px;color:var(--ink);text-decoration:none}
+a.card:hover{border-color:var(--blue)}
+a.card:hover .card-status{text-decoration:underline}
+.card-meta{font-size:14px;color:var(--muted)}
+.card-title{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;margin:8px 0 16px}
+.card-status{margin-top:auto;font-family:var(--display);font-weight:600;font-size:17px;color:var(--blue)}
+.card.soon{border-top-color:var(--grey)}
+.card.soon .card-status{color:var(--muted)}
+.card.tba{border-style:dashed;border-top:1px dashed var(--line);background:transparent}
+.card.tba .card-title{color:var(--muted);font-size:28px}
+.card.tba .card-status{color:var(--muted)}
+
+footer{max-width:1100px;margin:48px auto 0;padding:24px clamp(20px,5vw,64px) 56px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
