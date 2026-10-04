@@ -53,12 +53,16 @@ a{color:var(--blue)}
 .site-logo{width:1.5em;height:1.5em;margin-right:.4em;vertical-align:-.4em}
 .site-logo path,.hero-mark path{fill:none;stroke:currentColor;stroke-width:7;stroke-linecap:round}
 .site-logo circle,.hero-mark circle{fill:var(--gold)}
-/* Homepage: big faint logo behind the title and description */
+/* Homepage: big faint logo in the hero. Phones: behind the description, dot under the "v" of Curve */
 .hero-inner{isolation:isolate}
 /* --mark-w sets the size; the bottom offset lines the curve's base up with the bottom of the description */
-.hero-mark{--mark-w:clamp(300px,48vw,520px);position:absolute;z-index:-1;left:clamp(-40px,-3vw,-12px);bottom:calc(var(--mark-w) * -.3);width:var(--mark-w);height:auto;color:var(--hero-ink);pointer-events:none}
+.hero-mark{--mark-w:300px;position:absolute;z-index:-1;left:16px;bottom:calc(var(--mark-w) * -.3);width:var(--mark-w);height:auto;color:var(--hero-ink);pointer-events:none}
 .hero-mark path{stroke-opacity:.1}
-.hero-mark circle{fill:none;stroke:var(--gold);stroke-width:1;stroke-opacity:.55}
+.hero-mark circle{fill-opacity:.35}
+/* Wider screens: the whole logo sits to the right of the title and description */
+@media (min-width:760px){
+  .hero-mark{--mark-w:min(36vw,480px);left:auto;right:calc(var(--mark-w) * -.06)}
+}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(48px,8.5vw,112px);line-height:.92;margin:28px 0 24px;max-width:13ch;letter-spacing:-.005em}
 .hero .dek{font-size:clamp(18px,2.2vw,22px);max-width:36ch;margin:0 0 28px;opacity:.92}
 .byline{font-size:16px;opacity:.8}
